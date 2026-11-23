@@ -1,0 +1,62 @@
+{
+  "mailbox": "student@university.edu",
+  "auth": {
+    "authority": "https://login.microsoftonline.com/common",
+    "profiles": [
+      {
+        "name": "imap",
+        "label": "IMAP 读取（港大 ITS 官方推荐方式）",
+        "client_id": "9e5f94bc-e8a4-4e73-b8be-63364c29d753",
+        "scopes": [
+          "https://outlook.office.com/IMAP.AccessAsUser.All"
+        ]
+      },
+      {
+        "name": "graph",
+        "family": "graph",
+        "label": "Microsoft Graph（Thunderbird 客户端，可拿到精确邮件链接）",
+        "client_id": "9e5f94bc-e8a4-4e73-b8be-63364c29d753",
+        "scopes": [
+          "https://graph.microsoft.com/Mail.Read"
+        ]
+      },
+      {
+        "name": "graph_cli",
+        "family": "graph",
+        "label": "Microsoft Graph 命令行工具（备用通道）",
+        "client_id": "14d82eec-204b-4c2f-b7e8-296a70dab67e",
+        "scopes": [
+          "https://graph.microsoft.com/Mail.Read"
+        ]
+      }
+    ]
+  },
+  "imap": {
+    "host": "outlook.office365.com",
+    "port": 993,
+    "folder": "INBOX"
+  },
+  "fetch": {
+    "source": "auto",
+    "days_back": 7,
+    "max_messages": 150,
+    "body_chars": 4000
+  },
+  "webmail": {
+    "inbox_url": "https://outlook.office365.com/mail/inbox",
+    "search_url": "https://outlook.office365.com/mail/search?q="
+  },
+  "schedule": {
+    "times": ["12:00", "21:00"]
+  },
+  "widget": {
+    "opacity": 0.97,
+    "width": 400,
+    "height": 620,
+    "auto_start": true
+  },
+  "scoring": {
+    "key_threshold": 45,
+    "watch_threshold": 26
+  }
+}

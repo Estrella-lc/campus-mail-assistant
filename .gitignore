@@ -1,0 +1,19 @@
+# 凭证与本地数据（绝不提交）
+data/
+logs/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Electron
+widget/node_modules/
+widget/dist/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

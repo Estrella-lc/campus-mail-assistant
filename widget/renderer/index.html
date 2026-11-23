@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self';" />
+  <title>HKU 邮件助手</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 收起状态的小药丸 -->
+  <div id="pill" class="pill hidden" title="展开">
+    <span class="pill-logo">HKU</span>
+    <span class="pill-text">邮件</span>
+    <span id="pill-badge" class="pill-badge">0</span>
+  </div>
+
+  <!-- 主卡片 -->
+  <div id="card" class="card">
+    <header class="hd drag">
+      <div class="hd-left">
+        <div class="logo">HKU</div>
+        <div class="hd-titles">
+          <div class="hd-title">邮件助手</div>
+          <div id="hd-sub" class="hd-sub">正在读取…</div>
+        </div>
+      </div>
+      <div class="hd-actions no-drag">
+        <button id="btn-refresh" class="ico" title="立即刷新">⟳</button>
+        <button id="btn-mail" class="ico" title="打开港大邮箱">✉</button>
+        <button id="btn-collapse" class="ico" title="收起">—</button>
+        <button id="btn-close" class="ico" title="隐藏到托盘">✕</button>
+      </div>
+    </header>
+
+    <main id="body" class="body">
+      <section id="overview" class="overview">
+        <div class="ov-head">
+          <span id="ov-slot" class="chip-slot">今日汇总</span>
+          <span id="ov-time" class="ov-time"></span>
+        </div>
+        <p id="ov-headline" class="ov-headline">暂无数据。</p>
+        <div id="ov-stats" class="ov-stats"></div>
+      </section>
+
+      <section id="deadline-sec" class="sec hidden">
+        <div class="sec-title"><span class="dot dot-red"></span>截止看板</div>
+        <div id="deadline-list" class="deadline-list"></div>
+      </section>
+
+      <section id="key-sec" class="sec">
+        <div class="sec-title"><span class="dot dot-orange"></span>关键邮件<span id="key-count" class="sec-count"></span></div>
+        <div id="key-list" class="key-list"></div>
+      </section>
+
+      <section id="cats-sec" class="sec hidden">
+        <div class="sec-title"><span class="dot dot-blue"></span>分类中文小结</div>
+        <div id="cats-list" class="cats-list"></div>
+      </section>
+
+      <section id="watch-sec" class="sec hidden">
+        <details class="fold">
+          <summary><span id="watch-title">值得关注</span><span id="watch-n" class="fold-n"></span></summary>
+          <div id="watch-list" class="mini-list"></div>
+        </details>
+      </section>
+
+      <section id="other-sec" class="sec hidden">
+        <details class="fold">
+          <summary><span id="other-title">其他邮件</span><span id="other-n" class="fold-n"></span></summary>
+          <div id="other-list" class="mini-list"></div>
+        </details>
+      </section>
+
+      <footer class="ft">
+        <span id="ft-hint">数据每 15 秒自动刷新</span>
+        <button id="btn-demo-test" class="link-btn">测试系统通知</button>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
