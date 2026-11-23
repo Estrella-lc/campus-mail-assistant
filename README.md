@@ -56,8 +56,10 @@ python run_daily.py --notify    # 一键：抓取 + 分析 + 通知
 cd widget && npm install && npm start
 ```
 
-## 发布前检查（重要）
+## 关于这个项目的定位
 
-- 本仓库是**公开脱敏版**：真实邮箱、联系人、邮件正文、OAuth 凭证**均不在仓库中**。`config.json` 与 `auth_login.py` 中的账号已改为 `student@university.edu` 等示例值。
-- 若要在本机真实使用：把 `config.json` / `auth_login.py` 里的示例邮箱改成你自己的学校邮箱，重新跑一次设备码授权即可。授权凭证会存在本机 `data/token_cache.json`（已加入 `.gitignore`，不会进仓库）。
-- 示例邮件 `fixtures/demo_mail.json` 为虚构教学数据，公开链接为学校官网，不含个人信息。
+这是一个**真实在用的个人效率工具**，核心价值在两处工程细节：一是用 EWS 通道补齐 IMAP 拿不到的 OWA 直达链接（实测 36/36 命中），二是把"哪些邮件要紧"做成可解释、可调阈值的打分公式而非黑盒分类。它体现的是把模糊需求（"别漏掉重要邮件"）拆成可执行规则的产品能力，属于作品集里的**动手能力佐证**，非 AI 项目。
+
+## 数据与隐私
+
+仓库为公开脱敏版：真实邮箱、联系人、邮件正文、OAuth 凭证均不在仓库中，`config.json` 与 `auth_login.py` 中的账号为 `student@university.edu` 等示例值，需替换成自己的学校邮箱并重新授权才能真实使用。示例邮件 `fixtures/demo_mail.json` 为虚构教学数据，不含个人信息。
